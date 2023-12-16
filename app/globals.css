@@ -25,3 +25,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.bg-color-primary{
+  background-color: #1f1f1f;
+}
+
+.bg-color-secondary{
+  background-color: #2D2F31;
+  justify-content: center;
+}
