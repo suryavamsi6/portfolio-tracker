@@ -10,7 +10,7 @@ import {z} from "zod";
 import {ValidationState} from "@react-types/shared";
 import {zodResolver} from '@hookform/resolvers/zod';
 import {getAuth, GoogleAuthProvider, signInWithPopup} from "@firebase/auth";
-import {app} from "@/firebase/firebase";
+import {auth} from "@/firebase/firebase";
 import {FirebaseError} from "@firebase/util";
 export default function Login() {
     const mySchema = z.object({
@@ -43,7 +43,6 @@ export default function Login() {
     });
 
     function signIn() {
-        const auth = getAuth(app);
 
         signInWithPopup(auth, provider)
             .then((result) => {
