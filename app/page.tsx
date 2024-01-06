@@ -1,6 +1,8 @@
-import Login from "@/app/login/Login";
+'use client'
+import Login from "@/app/components/login/Login";
 import {Image} from "@nextui-org/react";
 import "./globals.css"
+import LoginContextProvider from "@/app/store/login-context";
 
 export default function Home() {
     return (
