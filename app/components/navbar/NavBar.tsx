@@ -46,9 +46,9 @@ export default function NavBar() {
                         as="button"
                         className="transition-transform"
                         color="secondary"
-                        name={loginContext.user?.displayName}
+                        name={loginContext.user?.displayName!}
                         size="sm"
-                        src={loginContext.user?.photoURL}
+                        src={loginContext.user?.photoURL!}
                     />
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Profile Actions" variant="flat">
