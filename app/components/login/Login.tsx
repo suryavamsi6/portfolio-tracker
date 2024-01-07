@@ -1,15 +1,13 @@
 'use client'
 
 import {Card, CardHeader, CardBody, CardFooter, Input, Button} from "@nextui-org/react";
-import {EyeFilledIcon, EyeSlashFilledIcon, MailIcon} from "@nextui-org/shared-icons";
 import {useContext, useState} from "react";
 import Image from "next/image";
 import {useRouter} from "next/navigation";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {z} from "zod";
-import {ValidationState} from "@react-types/shared";
 import {zodResolver} from '@hookform/resolvers/zod';
-import {getAuth, GoogleAuthProvider, signInWithPopup} from "@firebase/auth";
+import { GoogleAuthProvider, signInWithPopup} from "@firebase/auth";
 import {auth} from "@/firebase/firebase";
 import {FirebaseError} from "@firebase/util";
 import {LoginContext} from "@/app/store/login-context";

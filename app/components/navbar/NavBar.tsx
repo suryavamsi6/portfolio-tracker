@@ -11,10 +11,23 @@ import {
 } from "@nextui-org/react";
 import {LoginContext} from "@/app/store/login-context";
 import {useContext} from "react";
+import {auth} from "@/firebase/firebase";
+import {useRouter} from "next/navigation";
 
 export default function NavBar() {
 
     const loginContext = useContext(LoginContext);
+
+    const router = useRouter();
+
+    function signOut(){
+        auth.signOut().then(r => {
+            console.log("Signed Out");
+            loginContext.setLogout();
+            router.push("/");
+        });
+
+    }
 
     return <>
     <Navbar  position={"static"}>
@@ -58,7 +71,7 @@ export default function NavBar() {
                     </DropdownItem>
                     <DropdownItem key="settings">My Settings</DropdownItem>
                     <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-                    <DropdownItem key="logout" color="danger">
+                    <DropdownItem key="logout" color="danger" onClick={signOut}>
                         Log Out
                     </DropdownItem>
                 </DropdownMenu>
